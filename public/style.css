@@ -16,7 +16,7 @@ html {
 body {
   background-color: var(--background);
   color: var(--tekst);
-  font-family: Arial, sa;
+  font-family: Arial, sans-serif;
 }
 
 h1 , h2 {
@@ -171,3 +171,38 @@ iframe {
   height: 400px;
   border: #827f79;
 }
+
+/* Stijlen voor de faq-pagina */
+.faq-header {
+  background-color: var(--background);
+  text-align: center;
+  border-style: solid;
+  padding: 20px;
+}
+
+button {
+  background-color: var(--tekst);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px; 
+}
+
+button:hover {
+  background-color: red;
+}
+
+
+    .faq-answer {
+        display: none;
+    }
+
+    .faq-toggle:checked + .faq-question + .faq-answer {
+        display: block;
+    }
+
+
+
+

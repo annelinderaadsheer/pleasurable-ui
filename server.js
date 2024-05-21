@@ -30,7 +30,11 @@ import fetchJson from './helpers/fetch-json.js';
     // Render de index pagina en geef de data mee
     response.render('index', { services: apiData.data });
   });
-  
+
+  //app get faq page
+  app.get('/faq', async function (request, response) {
+    response.render('faq');
+  });
 
 // Stel het poortnummer in waar express op moet gaan luisteren
 app.set('port', process.env.PORT || 8000);
