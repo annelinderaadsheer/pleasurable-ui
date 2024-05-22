@@ -30,6 +30,12 @@ import fetchJson from './helpers/fetch-json.js';
     // Render de index pagina en geef de data mee
     response.render('index', { services: apiData.data });
   });
+
+  // maak een nieuwe route aan voor de contact pagina
+  app.get('/contact', function (request, response) {  
+    response.render('contact')
+  });
+  
   
 
 // Stel het poortnummer in waar express op moet gaan luisteren
