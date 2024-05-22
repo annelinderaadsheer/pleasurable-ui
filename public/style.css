@@ -229,8 +229,79 @@ iframe {
   }
 }
 
-
-
-
-
-
+/* FAQ styling */
+.faq {
+  margin: 5px auto;
+  padding-top: 40px;
+  position: relative;
+  line-height: 50px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+ }
+ 
+ .faq label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px; 
+  padding-left: 40px;
+  cursor: pointer;
+  user-select: none;
+ }
+ 
+ .faq label::before {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-top: 10px solid transparent;
+    border-left: 15px solid lightgray;
+    border-bottom: 10px solid transparent;
+    content:'';
+    transition: transform .5s linear;
+ }
+ 
+ .faq p {
+  height: 0;
+  transform: scaleY(0);
+  max-width: 700px;
+  box-sizing: border-box;
+  padding: 0;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0 auto;
+  transition: padding .5s ease-in , height .5s ease-in , transform .3s;
+ } 
+ 
+ .faq input {
+   display: none;
+ }
+ 
+ .faq input[type="checkbox"]:checked + label + p {
+    height: auto;
+    padding: 20px 7px;
+    transform: scaleY(1);
+ } 
+ 
+ .faq input[type="checkbox"]:checked + label::before {
+    transform: rotate(90deg) translateX(-10px);  
+ }
+ 
+ /* Stijl voor de h1 binnen de .faq__intro klasse */
+ .faq__intro h1 {
+   font-size: 2em;       
+   color: var(--dark);           
+   text-align: center;    
+   margin-top: 20px;      
+   margin-bottom: 20px;   
+   font-family: 'Noto Sans', sans-serif, Georgia;
+ }
+ 
+ /* Extra stijlen voor verschillende schermgroottes */
+ @media (max-width: 600px) {
+   .faq__intro h1 {
+     font-size: 1.5em;
+   }
+ }

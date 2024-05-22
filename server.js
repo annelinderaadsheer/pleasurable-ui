@@ -36,7 +36,10 @@ import fetchJson from './helpers/fetch-json.js';
     response.render('contact')
   });
   
-  
+  // GET-route voor FAQ pagina
+app.get("/faq", function (request, response) {
+  response.render("faq");
+});
 
 // Stel het poortnummer in waar express op moet gaan luisteren
 app.set('port', process.env.PORT || 8000);
