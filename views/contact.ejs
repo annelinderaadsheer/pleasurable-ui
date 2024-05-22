@@ -1,0 +1,81 @@
+<%- include('./partials/head.ejs') -%>
+
+<main>
+
+    <!-- contact  -->
+
+    <section class="contact-header">
+        <h2>Welkom bij de contactpagina</h2>
+        <p>Heb je een vraag of wil je contact met ons opnemen? Vul dan het contactformulier in of bekijk onze locatie.</p>
+
+        <section class="contact-info">
+            <div class="contact-gegevens">
+                <h2><i class="fas fa-address-book"></i> Adres</h2>
+                <p>Hannie Dankbaarpassage 47<br>1053 RT Amsterdam<br>Nederland</p>
+            </div>
+            <div class="contact-gegevens">
+                <h2><i class="fas fa-phone"></i> Email / telefoon</h2>
+                <p><a href="mailto:info@dehallen-amsterdam.nl">info@dehallen-amsterdam.nl</a><br>Tel. <a href="tel:+31207058164">+31(0)20 7058164</a></p>
+            </div>
+            <div class="contact-gegevens">
+                <h2>Socials</h2>
+                <p>
+                    <a href="https://www.instagram.com/dehallen.amsterdam/"><i class="fab fa-instagram"></i> Instagram</a><br>
+                    <a href="https://www.facebook.com/HallenAmsterdam/"><i class="fab fa-facebook"></i> Facebook</a>
+                </p>
+            </div>
+        </section>
+ 
+    
+        <!-- contact fomulier and map -->
+
+        <div class="container"> 
+            <!-- Contactformulier -->
+
+            <section class="contact-form">
+                <h2>Contactformulier</h2>
+                <form action="/contact" method="post">
+                    <label for="name">Naam:</label>
+                    <input type="text" id="name" name="name" required><br>
+          
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br>
+          
+                    <label for="subject">Onderwerp:</label>
+                    <input type="text" id="subject" name="subject" required><br>
+          
+                    <label for="phone">Telefoonnummer:</label>
+                    <input type="tel" id="phone" name="phone" required><br>
+          
+                    <label for="message">Bericht:</label><br>
+                    <textarea id="message" name="message" required></textarea><br>
+          
+                    <button type="submit">Verstuur</button>
+                </form>
+            </section>
+          
+            <!-- Locatie -->
+
+            <section class="map">
+                <h2>Locatie</h2>
+                <img src="https://dehallen-amsterdam.nl/wp-content/uploads/2018/08/DeHallen_kaartje.svg" alt="DeHallen Map" height="400" width="600">
+            </section>
+          </div>
+
+
+
+ 
+
+ 
+
+</main>
+ 
+
+
+
+
+
+
+
+
+

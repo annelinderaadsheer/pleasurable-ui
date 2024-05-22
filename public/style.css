@@ -16,7 +16,7 @@ html {
 body {
   background-color: var(--background);
   color: var(--tekst);
-  font-family: Arial, sa;
+  font-family: Arial, san;
 }
 
 h1 , h2 {
@@ -171,3 +171,66 @@ iframe {
   height: 400px;
   border: #827f79;
 }
+
+
+/* Styles voor contactpagina */
+
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column; /* flex-items in op kolommen */
+  margin-bottom: 30px;
+}
+
+.contact-gegevens {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-right: 10px; 
+  margin-bottom: 10px; 
+}
+
+.container {
+  display: flex;
+  flex-direction: column; 
+}
+
+.contact-form,
+.map {
+  flex: 1;
+  width: 100%; 
+}
+
+.contact-form label,
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  display: block; 
+  margin-bottom: 10px;
+}
+
+.map img {
+  max-width: 100%;
+  height: auto; 
+}
+
+@media screen and (min-width: 30em) { /* hetzelfde als 480pixel */
+  .contact-info {
+    flex-direction: row; 
+  }
+
+  .container {
+    flex-direction: row; 
+  }
+
+  .contact-form {
+    flex: 2; 
+  }
+}
+
+
+
+
+
+
