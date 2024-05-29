@@ -20,6 +20,7 @@ nav ul {
     display: flex;
     flex-direction: column; 
     align-items: center;
+    text-transform: uppercase;
 }
 
 nav ul li {
@@ -34,8 +35,7 @@ a:hover {
     color: red;
 }
 
-
-/* mediaquery https://polypane.app/blog/responsive-design-ground-rules/ */
+/* Mediaquery https://polypane.app/blog/responsive-design-ground-rules/ */
 
 @media only screen and (min-width: 30em) {
     nav {
@@ -53,4 +53,3 @@ a:hover {
         margin-right: 20px;
     }
 }
-

@@ -1,7 +1,6 @@
 import express from 'express';
 import fetchJson from './helpers/fetch-json.js';
 
-
   // Haal alle data op van de API
   const apiData = await fetchJson('https://fdnd-agency.directus.app/items/dh_services');
 
@@ -31,7 +30,12 @@ import fetchJson from './helpers/fetch-json.js';
     response.render('index', { services: apiData.data });
   });
 
-  // maak een nieuwe route aan voor de contact pagina
+    // GET-route voor home pagina
+    app.get('/home', function (request, response) {  
+      response.render('index')
+    });
+
+  // GET-route voor contact pagina
   app.get('/contact', function (request, response) {  
     response.render('contact')
   });
@@ -39,6 +43,21 @@ import fetchJson from './helpers/fetch-json.js';
   // GET-route voor FAQ pagina
 app.get("/faq", function (request, response) {
   response.render("faq");
+});
+
+// GET-route voor about pagina
+app.get("/about", function (request, response) {
+  response.render("about");
+});
+
+// GET-route voor FAQ pagina
+app.get("/faq", function (request, response) {
+  response.render("faq");
+});
+
+// GET-route voor opdracht pagina
+app.get("/opdracht", function (request, response) {
+  response.render("opdracht");
 });
 
 // Stel het poortnummer in waar express op moet gaan luisteren

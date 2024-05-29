@@ -23,7 +23,6 @@ h1 , h2 {
 color: var(--h1color);
 margin: 10px;
 font-size: 34px;
-
 }
 
 /* homepagina styling */
@@ -42,7 +41,7 @@ section.homepagina {
 .container { 
   grid-column: 1 / span 2;
   grid-row: 1;
-  margin-top: 40px;  /* positionering van de container */
+  margin-top: 40px;
   padding: 20px; 
   font-size: 16px;
 }
@@ -67,8 +66,7 @@ section.homepagina button:hover {
   background-color: var(--primair);
 }
 
-/* mediaquery voor homepagina */
-
+/* Mediaquery voor homepagina */
 @media only screen and (max-width: 600px) {
   section.homepagina {
     grid-template-columns: 1fr; 
@@ -76,7 +74,6 @@ section.homepagina button:hover {
     padding: 10px; 
     margin-top: 10px; 
   }
-
 
   .container {
     grid-column: 1; 
@@ -91,14 +88,21 @@ section.homepagina button:hover {
     justify-self: center; 
   }
 }
-/* Styles voor initiatief */
+
+/* Style voor een iniatief */
 .initiatieven {
   display: flex; 
   flex-wrap: wrap; 
   justify-content: space-between; 
+  list-style: none;
 }
 
-/* Style voor een iniatief */
+.initiatieven h1 {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 25px; 
+}
+
 .initiatieven li {
   flex: 0 0 calc(50% - 20px); /* maak de items 50% breed en houd rekening met de margin */
   box-sizing: border-box;
@@ -172,10 +176,7 @@ iframe {
   border: #827f79;
 }
 
-
 /* Styles voor contactpagina */
-
-
 .contact-info {
   display: flex;
   justify-content: space-between;
