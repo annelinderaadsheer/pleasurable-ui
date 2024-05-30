@@ -25,8 +25,7 @@ margin: 10px;
 font-size: 34px;
 }
 
-/* homepagina styling */
-
+/* Homepagina styling */
 section.homepagina {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -46,13 +45,13 @@ section.homepagina {
   font-size: 16px;
 }
 
-section.homepagina picture {
+/* section.homepagina picture {
   grid-column: 2;
   grid-row: 1 / span 2;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 section.homepagina button {
   width: 150px;
@@ -104,16 +103,34 @@ section.homepagina button:hover {
 }
 
 .initiatieven li {
-  flex: 0 0 calc(50% - 20px); /* maak de items 50% breed en houd rekening met de margin */
+  flex: 0 0 auto; /* maak de items zo breed als de inhoud */
   box-sizing: border-box;
   padding: 10px;
-  border: 1px solid var(--primair)
+  border: 1px solid var(--primair);
+  margin-bottom: 20px; /* voeg ruimte tussen de items toe */
 }
 
 .initiatieven li img {
   width: 100%; 
-  height: auto;
+  object-fit: cover;
   margin-right: 20px;
+}
+
+/* Like button initatief */
+.like-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.like-button:hover {
+  background-color: green;
 }
 
 @media (min-width: 30em) {
@@ -122,6 +139,7 @@ section.homepagina button:hover {
   }
 }
 
+/* Form */
 .homepagina-formulier {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Twee kolommen van gelijke breedte */
@@ -306,3 +324,92 @@ iframe {
      font-size: 1.5em;
    }
  }
+
+ /* Hearts */
+ .hidden {
+  display: none;
+}
+
+.hearts {
+  border: none;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 70px;
+}
+
+.reaction {
+  animation: bubbleUp 3s ease-in infinite;
+  bottom: -64px;
+  counter-increment: reaction;
+  position: absolute;
+  
+  &::before {
+    animation: wiggle .66s ease-in-out infinite;
+    content: var(--emoji);
+    display: block;
+  }
+  
+  &:nth-child(even) { --direction: -24px; }
+  &:nth-child(odd) { --direction: 24px; }
+  
+  &:nth-child(1) {
+    animation-delay: 0s;
+    font-size: .75em;
+  }
+  
+  &:nth-child(2) {
+    animation-delay: 0.25s;
+    font-size: 1.25em;
+  }
+  
+  &:nth-child(3) {
+    animation-delay: 1s;
+    font-size: 1.5em;
+  }
+  
+  &:nth-child(4) {
+    animation-delay: 1.25s;
+  }
+  
+  &:nth-child(5) {
+    animation-delay: 2s;
+    font-size: 1.75em;
+  }
+  
+  &:nth-child(6) {
+    animation-delay: 2.75s;
+  }
+}
+.reaction--heart { --emoji: '❤️'; }
+
+@keyframes bubbleUp {
+  0% {
+    transform: translateX(calc(var(--direction) * .5)) translateY(0);
+  }
+  
+  33% {
+    opacity: 1;
+  }
+  
+  100% {
+    opacity: 0;
+    transform: translateX(var(--direction)) translateY(calc(-100vh - 48px));
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+  
+  100% {
+    transform: rotate(-5deg);
+  }
+}

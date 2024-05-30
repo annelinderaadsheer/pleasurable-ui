@@ -1,20 +1,40 @@
-<!-- dit is een demo lijst met iniatiefen voor de homepagina -->
+<!-- Initatieven -->
 <ul class="initiatieven">
     <% services.slice(0, 6).forEach(function(service) { %>
       <li>
-        <img src="https://fdnd-agency.directus.app/assets/<%= service.image %>" alt="<%= service.title %>" width="300" height="150">
+        <img src="https://fdnd-agency.directus.app/assets/<%= service.image %>" alt="<%= service.title %>" >
         <div>
           <h2><%= service.title %></h2>
           <p>Neighbourhood: <%= service.neighbourhood %></p>
           <p>Description: <%= service.short_description %></p>
-          <p>Likes: <%= service.likes %></p>
+          <!-- <p>Likes: <%= service.likes %></p> -->
+          <p>Likes: <span class="like-count"><%= service.likes %></span></p>
           <p>Startdatum: <%= service.start_date %></p>
           <p>Einddatum: <%= service.end_date %></p>
           <p>Buurt: <%= service.neighbourhood %></p>
           <% if (service.time) { %>
             <p>Tijd: <%= service.time %></p>
             <% } %>
+
+      <!-- Like button -->
+      <form action="/like" method="POST">
+        <input type="hidden" name="likes" value="<%= service.likes %>">
+        <button class="like-button" for="<%= service.id %>-like" value="<%= service.id %>" name="initiatiefId">Like</button>
+        <!-- <span><%= service.likes %></span> -->
+      </form>  
+
+      <!-- Container for animated hearts -->
+      <div class="hearts hidden">
+        <span class="reaction reaction--heart"></span>
+        <span class="reaction reaction--heart"></span>
+        <span class="reaction reaction--heart"></span>
+        <span class="reaction reaction--heart"></span>
+      </div>
+    </div>
         </div>
       </li>
+
     <% }); %>
   </ul>
+
+  <script src="/script.js"></script> <!-- Link je script.js bestand hier -->
