@@ -326,7 +326,7 @@ iframe {
  }
 
  /* Hearts */
- .hidden {
+ /* .hidden {
   display: none;
 }
 
@@ -412,4 +412,4 @@ iframe {
   100% {
     transform: rotate(-5deg);
   }
-}
+} */
